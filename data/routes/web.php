@@ -38,8 +38,7 @@ Route::get('/home', function () {
 Route::get('/quanlykhachhang', 'UsersController@index');
 
 Route::get('/quanlykhoahoc', 'CoursesController@index');
-Route::get('/themkhoahoc/create', 'CoursesController@create');
-Route::post('/themkhoahoc/store', 'CoursesController@store');
+
 
 Route::get('/quanlythunhap', function () {
     return view('quanlythunhap');
@@ -48,4 +47,6 @@ Route::get('/quanlythunhap', function () {
 Route::get('/themkhoahoc', function () {
     return view('themkhoahoc');
 });
+Route::get('/themkhoahoc/create', 'CoursesController@create');
+Route::post('/themkhoahoc/store', 'CoursesController@store');
 

@@ -23,7 +23,7 @@
   <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
-      <a class="navbar-brand ps-3" href="home.html">TOEIC</a>
+      <a class="navbar-brand ps-3" href="/home">TOEIC</a>
       <!-- Sidebar Toggle-->
       <button
         class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
@@ -74,7 +74,7 @@
             <li><a class="dropdown-item" href="#!">Settings</a></li>
             <li><a class="dropdown-item" href="#!">Activity Log</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="login.html"
+            <li><a class="dropdown-item" href="/login"
               >Đăng xuất</a>
             </li>
           </ul>
@@ -86,7 +86,7 @@
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
           <div class="sb-sidenav-menu">
             <div class="nav">
-              <a class="nav-link" href="home.html">
+              <a class="nav-link" href="/home">
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-tachometer-alt"></i>
                 </div>
@@ -116,7 +116,7 @@
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="quanlykhoahoc.html"
+                  <a class="nav-link" href="/quanlykhoahoc"
                     >Quản lý khóa học</a
                   >
                 </nav>
@@ -128,7 +128,7 @@
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="quanlythunhap.html"
+                  <a class="nav-link" href="/quanlythunhap"
                     >Quản lý thu nhâp</a
                   >
                 </nav>
@@ -189,7 +189,7 @@
                 </nav>
               </div>
               <div class="sb-sidenav-menu-heading">Người dùng</div>
-              <a class="nav-link" href="quanlykhachhang.html">
+              <a class="nav-link" href="/quanlykhachhang">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                Quản Lý khách hàng
               </a>
@@ -276,7 +276,7 @@
                           <div class="col-md-4 pl-1">
                             <div class="form-group" style="padding-top: 20px;">
                               <button type="submit" class="btn btn-primary btn-sm">Thêm mới</button>
-                              <button type="submit" class="btn btn-secondary btn-sm"><a style="text-decoration: none; color:white;" href="quanlykhoahoc.html">Hủy</a></button>
+                              <button type="submit" class="btn btn-secondary btn-sm"><a style="text-decoration: none; color:white;" href="/quanlykhoahoc">Hủy</a></button>
                               
                             </div>
                           </div>

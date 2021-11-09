@@ -230,7 +230,7 @@
                     @foreach($course as $row)
                     <tr>
                   <td>{{$row->id}}</td>
-                  <td><{{$row->name}}/td>
+                  <td><{{$row->name}}</td>
                   <td>{{$row->image}}</td>
                   <td>{{$row->description}}</td>
                   <td>{{$row->status}}</td>

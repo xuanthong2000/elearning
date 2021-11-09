@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Courses;
+use App\Course;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
@@ -42,7 +42,7 @@ class CoursesController extends Controller
      */
     public function store(Request $request)
     {
-        $course = new Courses;
+        $course = new Course;
         $course->name = $request->name; 
         $course->image = $request->image;
         $course->status = $request->status;
