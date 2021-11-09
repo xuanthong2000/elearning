@@ -275,7 +275,7 @@
                           
                           <div class="col-md-4 pl-1">
                             <div class="form-group" style="padding-top: 20px;">
-                              <button type="submit" class="btn btn-primary btn-sm">Thêm mới</button>
+                              <button type="submit" class="btn btn-primary btn-sm" href="/quanlykhoahoc">Thêm mới</button>
                               <button type="submit" class="btn btn-secondary btn-sm"><a style="text-decoration: none; color:white;" href="/quanlykhoahoc">Hủy</a></button>
                               
                             </div>

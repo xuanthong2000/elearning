@@ -234,7 +234,13 @@
                   <td>{{$row->image}}</td>
                   <td>{{$row->description}}</td>
                   <td>{{$row->status}}</td>
-                  <td>Edit | Delete</td>
+                  <td><a href="/editkhoahoc/{{$row->id}}">Edit</a></br>
+                      <form method="POST" action="/quanlykhoahoc/{{$row->id}}" onsubmit="return ConfirmDelete( this )">
+                        @method('DELETE')
+                        @csrf
+                    <button type="submit">Delete</button>
+                </form>
+                  </td>
                     </tr>
                   @endforeach
                   @endif

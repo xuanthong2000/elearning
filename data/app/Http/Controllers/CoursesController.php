@@ -72,7 +72,9 @@ class CoursesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $course = course::findOrFail($id);
+        
+        return view('/editkhoahoc', compact('course',));
     }
 
     /**
@@ -84,7 +86,25 @@ class CoursesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $course = course::find($id);
+        $course->name = $request->name; 
+        
+        if(
+            $request->image == null
+
+        ){
+            $course->image = " ";
+        }
+        else{
+            $course->image = $request->image;
+        }
+        $course->status = $request->status;
+        $course->description = $request->description;
+        // $course->category_id= 1;
+        // $course->users_id = 2;
+
+        $course->save();
+        return back();
     }
 
     /**
@@ -95,6 +115,22 @@ class CoursesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $course = course::find($id);
+
+        $course->delete();
+        return redirect()->action('CoursesController@index')->with('success','Dữ liệu xóa thành công.');
+    }
+    public function showform() {
+        return view('/editkhoahoc');
+    }
+    public function validationform(Request $request) {
+        echo "<pre>";
+            print_r($request->all());
+        echo "</pre>";
+
+        $this->validation($request,[
+            'title'=>'required|max:50',
+            'description'=>'required'
+        ]);
     }
 }

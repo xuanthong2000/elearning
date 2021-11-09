@@ -49,4 +49,9 @@ Route::get('/themkhoahoc', function () {
 });
 Route::get('/themkhoahoc/create', 'CoursesController@create');
 Route::post('/themkhoahoc/store', 'CoursesController@store');
-
+Route::DELETE('/quanlykhoahoc/{id}', 'CoursesController@destroy');
+Route::get('/editkhoahoc/{id}', 'CoursesController@edit');
+Route::post('/editkhoahoc/{id}', 'CoursesController@update');
+Route::get('/editkhoahoc', 'CoursesController@showform');
+Route::post('/editkhoahoc', 'CoursesController@validationform');
+// Route::PATCH('/editkhoahoc/{id}', 'CoursesController>@update');
