@@ -39,6 +39,9 @@ Route::get('/quanlykhachhang', 'UsersController@index');
 Route::get('/quanlykhoahoc', function () {
     return view('quanlykhoahoc');
 });
+Route::get('/themkhoahoc/create', 'CoursesController@create');
+Route::post('/themkhoahoc/store', 'CoursesController@store');
+
 Route::get('/quanlythunhap', function () {
     return view('quanlythunhap');
 });

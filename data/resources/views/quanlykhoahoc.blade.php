@@ -220,135 +220,24 @@
                   <thead>
                     <th>STT</th>
                     <th>Tên khóa học</th>
-                    <th>Giá bán</th>
                     <th>Ảnh</th>
                     <th>Mô tả khóa học</th>
                     <th>Trạng thái</th>
-                    <th>Ngày cập nhật</th>
-                    <th>Xóa/Sửa</th>
+                    <th>tool</th>
                   </thead>
                   <tbody>
+                    @if(isset($users))
+                    @foreach($course as $row)
                     <tr>
-                      <td>1</td>
-                      <td>toeic cơ bản</td>
-                      <td>1,000,000 VND</td>
-                      <td>
-                        <img
-                          style="height: 125px; width: 125px"
-                          src="images/1.png"
-                        />
-                      </td>
-                      <td>khóa học toeic 350-450</td>
-                      <td>đã kích hoạt</td>
-                      <td>02/11/2021</td>
-                      <td>
-                        <a href="editkhoahoc">Chỉnh sửa</a> |
-                        <a href="">Xóa</a>
-                      </td>
+                  <td>{{$row->id}}</td>
+                  <td><{{$row->name}}/td>
+                  <td>{{$row->image}}</td>
+                  <td>{{$row->description}}</td>
+                  <td>{{$row->status}}</td>
+                  <td>Edit | Delete</td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>toeic cơ bản</td>
-                      <td>1,000,000 VND</td>
-                      <td>
-                        <img
-                          style="height: 125px; width: 125px"
-                          src="images/2.png"
-                        />
-                      </td>
-                      <td>khóa học toeic 350-450</td>
-                      <td>đã kích hoạt</td>
-                      <td>02/11/2021</td>
-                      <td>
-                        <a href="editkhoahoc">Chỉnh sửa</a> |
-                        <a href="">Xóa</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>toeic cơ bản</td>
-                      <td>1,000,000 VND</td>
-                      <td>
-                        <img
-                          style="height: 125px; width: 125px"
-                          src="images/3.png"
-                        />
-                      </td>
-                      <td>khóa học toeic 350-450</td>
-                      <td>đã kích hoạt</td>
-                      <td>02/11/2021</td><td>
-                        <a href="editkhoahoc">Chỉnh sửa</a> |
-                        <a href="">Xóa</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>toeic cơ bản</td>
-                      <td>1,000,000 VND</td>
-                      <td>
-                        <img
-                          style="height: 125px; width: 125px"
-                          src="images/4.png"
-                        />
-                      </td>
-                      <td>khóa học toeic 350-450</td>
-                      <td>đã kích hoạt</td>
-                      <td>02/11/2021</td><td>
-                        <a href="editkhoahoc">Chỉnh sửa</a> |
-                        <a href="">Xóa</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>toeic cơ bản</td>
-                      <td>1,000,000 VND</td>
-                      <td>
-                        <img
-                          style="height: 125px; width: 125px"
-                          src="images/1.png"
-                        />
-                      </td>
-                      <td>khóa học toeic 350-450</td>
-                      <td>đã kích hoạt</td>
-                      <td>02/11/2021</td><td>
-                        <a href="editkhoahoc">Chỉnh sửa</a> |
-                        <a href="">Xóa</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>toeic cơ bản</td>
-                      <td>1,000,000 VND</td>
-                      <td>
-                        <img
-                          style="height: 125px; width: 125px"
-                          src="images/2.png"
-                        />
-                      </td>
-                      <td>khóa học toeic 350-450</td>
-                      <td>đã kích hoạt</td>
-                      <td>02/11/2021</td><td>
-                        <a href="editkhoahoc">Chỉnh sửa</a> |
-                        <a href="">Xóa</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td>toeic cơ bản</td>
-                      <td>1,000,000 VND</td>
-                      <td>
-                        <img
-                          style="height: 125px; width: 125px"
-                          src="images/3.png"
-                        />
-                      </td>
-                      <td>khóa học toeic 350-450</td>
-                      <td>đã kích hoạt</td>
-                      <td>02/11/2021</td><td>
-                        <a href="editkhoahoc">Chỉnh sửa</a> |
-                        <a href="">Xóa</a>
-                      </td>
-                    </tr>
+                  @endforeach
+                  @endif
                   </tbody>
                 </table>
               </div>
