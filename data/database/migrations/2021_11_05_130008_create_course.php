@@ -18,6 +18,7 @@ class CreateCourse extends Migration
             $table->string('name');
 			$table->string('image');
 			$table->string('status');
+            $table->string('description');
 			$table->integer('category_id')->unsigned();
 			$table->integer('users_id')->unsigned();
             $table->timestamps();

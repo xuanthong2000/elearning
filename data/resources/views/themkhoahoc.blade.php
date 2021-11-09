@@ -118,7 +118,7 @@
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="quanlykhoahoc"
+                  <a class="nav-link" href="/quanlykhoahoc"
                     >Quản lý khóa học</a
                   >
                 </nav>
@@ -276,7 +276,7 @@
                           <div class="col-md-4 pl-1">
                             <div class="form-group" style="padding-top: 20px;">
                               <button type="button" class="btn btn-primary btn-sm">Thêm mới</button>
-                              <button type="button" class="btn btn-secondary btn-sm"><a style="text-decoration: none; color:white;" href="quanlykhoahoc">Hủy</a></button>
+                              <button type="button" class="btn btn-secondary btn-sm"><a style="text-decoration: none; color:white;" href="/quanlykhoahoc">Hủy</a></button>
                               
                             </div>
                           </div>

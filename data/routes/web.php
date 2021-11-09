@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
-
+use App\Http\Controllers\CoursesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,6 +39,7 @@ Route::get('/quanlykhachhang', 'UsersController@index');
 Route::get('/quanlykhoahoc', function () {
     return view('quanlykhoahoc');
 });
+Route::get('/quanlykhoahoc', 'CoursesController@index');
 Route::get('/themkhoahoc/create', 'CoursesController@create');
 Route::post('/themkhoahoc/store', 'CoursesController@store');
 

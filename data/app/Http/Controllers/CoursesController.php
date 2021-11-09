@@ -18,10 +18,10 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        $courses = DB::table('course')->select('course.id','course.name','course.image','course.status');
-        $courses = $courses->get();
+        $course = DB::table('course')->select('course.id','course.name','course.image','course.description','course.status');
+        $course = $course->get();
 
-        return view('/quanlykhoahoc', compact('courses'));
+        return view('/quanlykhoahoc', compact('course'));
     }
 
     /**

@@ -226,7 +226,7 @@
                     <th>tool</th>
                   </thead>
                   <tbody>
-                    @if(isset($users))
+                    @if(isset($course))
                     @foreach($course as $row)
                     <tr>
                   <td>{{$row->id}}</td>
