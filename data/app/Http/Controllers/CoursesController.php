@@ -74,7 +74,7 @@ class CoursesController extends Controller
     {
         $course = course::findOrFail($id);
         
-        return view('/editkhoahoc', compact('course',));
+        return view('/editkhoahoc', compact('course'));
     }
 
     /**
