@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\CategorysController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,51 +14,58 @@ use App\Http\Controllers\CoursesController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('users', [UsersController::class, 'index']);
+Route::get('users', [UsersController::class, 'clinet/index']);
 
 Route::get('/', function () {
-    return view('index');
+    return view('client/index');
 });
 Route::get('/login', function () {
-    return view('login2');
+    return view('client/login2');
 });
-
+Route::get('/resetpass', function () {
+    return view('client/resetpass');
+});
 Route::get('/login/create', 'UsersController@create');
 Route::post('/login/store', 'UsersController@store');
 
-Route::get('/resetpass', function () {
-    return view('resetpass');
-});
-Route::get('/editkhoahoc', function () {
-    return view('editkhoahoc');
-});
-Route::get('/editchude', function () {
-    return view('editchude');
-});
+
+// Route::get('/editkhoahoc', function () {
+//     return view('editkhoahoc');
+// });
+
 Route::get('/home', function () {
-      return view('home');
+      return view('manage/home');
 });
 
-Route::get('/quanlykhachhang', 'UsersController@index');
+Route::get('quanlykhachhang', 'UsersController@index');
 
-Route::get('/quanlykhoahoc', 'CoursesController@index');
 
+Route::get('quanlykhoahoc', 'CoursesController@index');
+Route::DELETE('/quanlykhoahoc/{id}', 'CoursesController@destroy');
+Route::get('/insertandedit/editkhoahoc/{id}', 'CoursesController@edit');
+Route::post('/insertandedit/editkhoahoc/{id}', 'CoursesController@update');
+// Route::get('/editkhoahoc', 'CoursesController@showform');
+// Route::post('/editkhoahoc', 'CoursesController@validationform');
+
+Route::get('/themkhoahoc', function () {
+    return view('insertandedit/themkhoahoc');
+});
+Route::get('/insertandedit/themkhoahoc/create', 'CoursesController@create');
+Route::post('/insertandedit/themkhoahoc/store', 'CoursesController@store');
 
 Route::get('/quanlychude', function () {
     return view('quanlychude');
 });
+Route::get('quanlychude', 'CategorysController@index');
+Route::get('/insertandedit/editchude/{id}', 'CategorysController@edit');
+Route::post('/insertandedit/editchude/{id}', 'CategorysController@update');
+Route::DELETE('/quanlychude/{id}', 'CategorysController@destroy');
 
-Route::get('/themkhoahoc', function () {
-    return view('themkhoahoc');
-});
 Route::get('/themchude', function () {
-    return view('themchude');
+    return view('insertandedit/themchude');
 });
-Route::get('/themkhoahoc/create', 'CoursesController@create');
-Route::post('/themkhoahoc/store', 'CoursesController@store');
-Route::DELETE('/quanlykhoahoc/{id}', 'CoursesController@destroy');
-Route::get('/editkhoahoc/{id}', 'CoursesController@edit');
-Route::post('/editkhoahoc/{id}', 'CoursesController@update');
-Route::get('/editkhoahoc', 'CoursesController@showform');
-Route::post('/editkhoahoc', 'CoursesController@validationform');
-// Route::PATCH('/editkhoahoc/{id}', 'CoursesController>@update');
+Route::get('/insertandedit/themchude/create', 'CategorysController@create');
+Route::post('/insertandedit/themchude/store', 'CategorysController@store');
+
+
+

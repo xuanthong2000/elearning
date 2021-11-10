@@ -21,7 +21,7 @@ class CoursesController extends Controller
         $course = DB::table('course')->select('course.id','course.name','course.image','course.description','course.status');
         $course = $course->get();
 
-        return view('/quanlykhoahoc', compact('course'));
+        return view('/manage/quanlykhoahoc', compact('course'));
     }
 
     /**
@@ -50,7 +50,7 @@ class CoursesController extends Controller
         $course->category_id= 1;
         $course->users_id = 2;
         $course->save();
-        return back();
+        return redirect()->action('CoursesController@index');
     }
 
     /**
@@ -74,7 +74,7 @@ class CoursesController extends Controller
     {
         $course = course::findOrFail($id);
         
-        return view('/editkhoahoc', compact('course'));
+        return view('insertandedit/editkhoahoc', compact('course'));
     }
 
     /**
@@ -104,7 +104,7 @@ class CoursesController extends Controller
         // $course->users_id = 2;
 
         $course->save();
-        return back();
+        return redirect()->action('CoursesController@index');
     }
 
     /**

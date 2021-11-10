@@ -16,7 +16,7 @@ class UsersController extends Controller
 		$users = DB::table('users')->select('users.id','users.name','users.email','users.phone');
         $users = $users->get();
 
-        return view('/quanlykhachhang', compact('users'));
+        return view('/manage/quanlykhachhang', compact('users'));
 	}
     function create() {
         return view('/login2');

@@ -221,34 +221,80 @@
                 <div class="col-md-8">
                   <div class="card">
                     <div class="card-header">
-                      <h4 class="card-title">Chỉnh sửa chủ đề</h4>
+                      <h4 class="card-title">Chỉnh sửa khóa học</h4>
                     </div>
                     <div class="card-body">
                         <div class="row">
-                        <form method="post" action="/editchude">
+                        <form method="post" action="/insertandedit/editkhoahoc/{{$course->id }}">
                           <!-- @method('PATCH') -->
                           @csrf
                           <div class="col-md-3 pl-1">
                             <div class="form-group">
                               <label>STT:</label>
                               <input
-                                class="form-control text-box single-line" name="id" value=""
+                                class="form-control text-box single-line" name="id" value="{{ $course->id }}"
                                />
                             </div>
                           </div>
-                          <div class="col-md-9 pl-1">
+                          <div class="col-md-6 pl-1">
                             <div class="form-group" >
                               <label>Tên khóa học</label>
                               <input
-                                class="form-control text-box single-line" name="name" value=""
+                                class="form-control text-box single-line" name="name" value="{{ $course->name }}"
                               />
                             </div>
                           </div>
 
+                          <!-- <div class="col-md-6 pl-1">
+                            <div class="form-group" style="padding-top: 10px;">
+                              <label>Đơn giá:</label>
+                              <input
+                                class="form-control text-box single-line"
+                              />
+                            </div>
+                          </div> -->
+                          
+                          <div class="col-md-6 pl-1">
+                            <div class="form-group" style="padding-top: 10px;">
+                              <label>Ảnh bìa:</label>
+                              <input class="form-control" type="file" id="formFileMultiple" multiple name="image" value="{{ $course->image }}">
+                              <div class="form-group" style="padding-top: 10px;">
+                              <label>Tải video:</label>
+                              <input class="form-control" type="file" name="video" value="" id="formFileMultiple" multiple>
+                            </div>
+                            </div>
+                          </div>
+
+                          <div class="mb-3">
+                            <div class="form-group" style="padding-top: 10px;">
+                              <label>Mô tả khóa học:</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" value="{{ $course->description }}"></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-6 pl-1">
+                            <div class="form-group" >
+                              <label>Trạng thái:</label>
+                              <input
+                                class="form-control text-box single-line" name="status" value="{{ $course->status }}"
+                              />
+                            </div>
+                          </div>
+                          <!-- <div class="col-md-6 pl-1">
+                            <div class="form-group">
+                              <label>Ngày cập nhật:</label>
+                              <input
+                                class="form-control"
+                                type="date"
+                                name="Ngaycapnhat"
+                              />
+                            </div>
+                          </div> -->
+                        
+                          
                           <div class="col-md-4 pl-1">
                             <div class="form-group" style="padding-top: 20px;">
                               <button type="submit" class="btn btn-primary btn-sm">Lưu</button>
-                              <button type="submit" class="btn btn-secondary btn-sm"><a style="text-decoration: none; color:white;" href="/quanlychude">Hủy</a></button>
+                              <button type="submit" class="btn btn-secondary btn-sm"><a style="text-decoration: none; color:white;" href="/quanlykhoahoc">Hủy</a></button>
                               
                             </div>
                           </div>

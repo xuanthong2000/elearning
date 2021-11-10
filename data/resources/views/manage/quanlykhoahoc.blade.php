@@ -19,11 +19,13 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/datables-simple-demo.js"></script>
   </head>
   <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
-      <a class="navbar-brand ps-3" href="/home">TOEIC</a>
+      <a class="navbar-brand ps-3" href="home">TOEIC</a>
       <!-- Sidebar Toggle-->
       <button
         class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
@@ -74,7 +76,7 @@
             <li><a class="dropdown-item" href="#!">Settings</a></li>
             <li><a class="dropdown-item" href="#!">Activity Log</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="/login"
+            <li><a class="dropdown-item" href="login"
               >Đăng xuất</a>
             </li>
           </ul>
@@ -86,7 +88,7 @@
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
           <div class="sb-sidenav-menu">
             <div class="nav">
-              <a class="nav-link" href="/home">
+              <a class="nav-link" href="home">
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-tachometer-alt"></i>
                 </div>
@@ -116,7 +118,7 @@
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="/quanlykhoahoc"
+                  <a class="nav-link" href="quanlykhoahoc"
                     >Quản lý khóa học</a
                   >
                 </nav>
@@ -128,7 +130,7 @@
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="/quanlychude"
+                  <a class="nav-link" href="quanlychude"
                     >Quản lý chủ đề</a
                   >
                 </nav>
@@ -189,7 +191,7 @@
                 </nav>
               </div>
               <div class="sb-sidenav-menu-heading">Người dùng</div>
-              <a class="nav-link" href="/quanlykhachhang">
+              <a class="nav-link" href="quanlykhachhang">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                Quản Lý khách hàng
               </a>
@@ -202,100 +204,48 @@
       </div>
       <div id="layoutSidenav_content">
         <main>
-          <div class="content" style="margin-top: 20px;">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-md-8">
-                  <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Thêm khóa học</h4>
-                            </div>
-                            <div class="card-body">
-                            <div class="row">
-                            <form method="post" action="themkhoahoc/store">
-                             @csrf
-                          <!-- <div class="col-md-3 pl-1">
-                            <div class="form-group">
-                              <label>STT:</label>
-                              <input
-                                class="form-control text-box single-line"
-                              />
-                            </div>
-                          </div> -->
-                          <div class="col-md-6 pl-1">
-                            <div class="form-group" >
-                              <label>Tên khóa học</label>
-                              <select class="form-control text-box single-line" name="name" value=""
-                              >
-                                <option value="volvo">PHP</option>
-                                <option value="saab">Java</option>
-                                <option value="fiat">ASP.NET</option>
-                                <option value="audi">javascript</option>
-                                </select>
-                              
-                            </div>
-                          </div>
+          <div class="container-fluid px-4">
+            <h1 class="mt-4">Quản lý khóa học</h1>
+            <ol class="breadcrumb mb-4"></ol>
 
-                          <!-- <div class="col-md-6 pl-1">
-                            <div class="form-group" style="padding-top: 10px;">
-                              <label>Đơn giá:</label>
-                              <input
-                                class="form-control text-box single-line"
-                              />
-                            </div>
-                          </div> -->
-                          
-                          <div class="col-md-6 pl-1">
-                            <div class="form-group" style="padding-top: 10px;">
-                              <label>Ảnh bìa:</label>
-                              <input class="form-control" type="file" name="image" value="" id="formFileMultiple" multiple>
-                            </div>
-
-                            <div class="form-group" style="padding-top: 10px;">
-                              <label>Tải video:</label>
-                              <input class="form-control" type="file" name="video" value="" id="formFileMultiple" multiple>
-                            </div>
-                          </div>
-
-                          <div class="mb-3">
-                            <div class="form-group" style="padding-top: 10px;">
-                              <label>Mô tả khóa học:</label>
-                              <textarea class="form-control" id="exampleFormControlTextarea1" name="description" value= "" rows="3"></textarea>
-                            </div>
-                          </div>
-                          <div class="col-md-6 pl-1">
-                            <div class="form-group" >
-                              <label>Trạng thái:</label>
-                              <input
-                                class="form-control text-box single-line" name="status" value=""
-                              />
-                            </div>
-                          </div>
-                          <!-- <div class="col-md-6 pl-1">
-                            <div class="form-group">
-                              <label>Ngày cập nhật:</label>
-                              <input
-                                class="form-control"
-                                type="date"
-                                name="Ngaycapnhat"
-                              />
-                            </div>
-                          </div> -->
-                        
-                          
-                          <div class="col-md-4 pl-1">
-                            <div class="form-group" style="padding-top: 20px;">
-                              <button type="submit" class="btn btn-primary btn-sm" href="/quanlykhoahoc">Thêm mới</button>
-                              <button type="submit" class="btn btn-secondary btn-sm"><a style="text-decoration: none; color:white;" href="/quanlykhoahoc">Hủy</a></button>
-                              
-                            </div>
-                          </div>
-                        </form>
-                            </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
+            <div class="card mb-4">
+              <div class="card-header">
+                <p class="card-category">
+                  <a class="nav-link" href="themkhoahoc">+Thêm khóa học</a>
+                  
+                </p>
+              </div>
+              <div class="card-body table-full-width table-responsive">
+                <table id="datatablesSimple">
+                  <thead>
+                    <th>STT</th>
+                    <th>Tên khóa học</th>
+                    <th>Ảnh</th>
+                    <th>Mô tả khóa học</th>
+                    <th>Trạng thái</th>
+                    <th>tool</th>
+                  </thead>
+                  <tbody>
+                    @if(isset($course))
+                    @foreach($course as $row)
+                    <tr>
+                  <td>{{$row->id}}</td>
+                  <td>{{$row->name}}</td>
+                  <td>{{$row->image}}</td>
+                  <td>{{$row->description}}</td>
+                  <td>{{$row->status}}</td>
+                  <td><a href="/insertandedit/editkhoahoc/{{$row->id}}">Edit</a></br>
+                      <form method="POST" action="/quanlykhoahoc/{{$row->id}}" onsubmit="return ConfirmDelete( this )">
+                        @method('DELETE')
+                        @csrf
+                    <button type="submit">Delete</button>
+                </form>
+                  </td>
+                    </tr>
+                  @endforeach
+                  @endif
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
