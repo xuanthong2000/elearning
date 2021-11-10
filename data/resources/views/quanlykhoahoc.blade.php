@@ -19,8 +19,6 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
-    <script type="text/javascript" src="js/datables-simple-demo.js"></script>
   </head>
   <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -130,8 +128,8 @@
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="quanlythunhap"
-                    >Quản lý thu nhâp</a
+                  <a class="nav-link" href="quanlychude"
+                    >Quản lý chủ đề</a
                   >
                 </nav>
               </div>

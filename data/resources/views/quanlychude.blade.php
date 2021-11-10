@@ -19,8 +19,6 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
-    <script type="text/javascript" src="js/datables-simple-demo.js"></script>
   </head>
   <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -130,8 +128,8 @@
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="quanlythunhap"
-                    >Quản lý thu nhâp</a
+                  <a class="nav-link" href="quanlychude"
+                    >Quản lý chủ đề</a
                   >
                 </nav>
               </div>
@@ -205,219 +203,33 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Quản lý Thu nhập</h1>
+            <h1 class="mt-4">Quản lý chủ đề</h1>
             <ol class="breadcrumb mb-4"></ol>
 
             <div class="card mb-4">
               <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                Danh sách Thu nhập
-              </div>
+                  <p class="card-category">
+                    <a class="nav-link" href="themchude">+Thêm chủ đề</a>
+                    
+                  </p>
+                </div>
               <div class="card-body">
                 <table id="datatablesSimple">
-                  <thead>
-                    <tr>
-                      <th>STT</th>
-                      
-                      <th>Tên Khóa học</th>
-                      <th>Số lượng</th>
-                      <th>Đơn giá</th>
-                      <th>Thành tiền</th>
-                    </tr>
+                <thead>
+                    <th>STT</th>
+                    <th>Tên khóa học</th>
+                    <th>tool</th>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                      <td>1,000,000 VND</td>
-
+                      <td>PHP</td>
+                      <td><a href="/editchude">Edit</a>  |
+                          <a href="">Delete</a>
+                          </form>
+                      </td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Toeic cơ bản</td>
-                      <td>2</td>
-                      <td>1,000,000 VND</td>
-                       <td>2,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>8</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>9</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>10</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>11</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>12</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>13</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>14</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>15</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>16</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>17</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>18</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>19</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>20</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>21</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>22</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>23</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
-                    <tr>
-                      <td>24</td>
-                      <td>Toeic cơ bản</td>
-                      <td>1</td>
-                      <td>1,000,000 VND</td>
-                       <td>1,000,000 VND</td>
-
-                    </tr>
+                    
                   </tbody>
                 </table>
               </div>

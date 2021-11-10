@@ -260,6 +260,12 @@
                               <input class="form-control" type="file" id="formFileMultiple" multiple name="image" value="{{ $course->image }}">
                             </div>
                           </div>
+                          <div class="col-md-6 pl-1">
+                            <div class="form-group" style="padding-top: 10px;">
+                              <label>Video:</label>
+                              <input class="form-control" type="file" id="formFileMultiple" multiple name="video" value="">
+                            </div>
+                          </div>
 
                           <div class="mb-3">
                             <div class="form-group" style="padding-top: 10px;">
