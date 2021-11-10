@@ -14,13 +14,26 @@
       href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
       rel="stylesheet"
     />
-    <link href="css/styles.css" rel="stylesheet" />
+    <style type="text/css">
+        .error-message { color: red; }
+    </style>
+    <link href="/css/styles.css" rel="stylesheet" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body class="sb-nav-fixed">
+  @if (count($errors) > 0)
+    <div class="error-message">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
       <a class="navbar-brand ps-3" href="/home">TOEIC</a>
@@ -207,91 +220,40 @@
               <div class="row">
                 <div class="col-md-8">
                   <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Thêm khóa học</h4>
-                            </div>
-                            <div class="card-body">
-                            <div class="row">
-                            <form method="post" action="themkhoahoc/store">
-                             @csrf
-                          <!-- <div class="col-md-3 pl-1">
+                    <div class="card-header">
+                      <h4 class="card-title">Chỉnh sửa chủ đề</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                        <form method="post" action="/editchude">
+                          <!-- @method('PATCH') -->
+                          @csrf
+                          <div class="col-md-3 pl-1">
                             <div class="form-group">
                               <label>STT:</label>
                               <input
-                                class="form-control text-box single-line"
-                              />
+                                class="form-control text-box single-line" name="id" value=""
+                               />
                             </div>
-                          </div> -->
-                          <div class="col-md-6 pl-1">
+                          </div>
+                          <div class="col-md-9 pl-1">
                             <div class="form-group" >
                               <label>Tên khóa học</label>
-                              <select class="form-control text-box single-line" name="name" value=""
-                              >
-                                <option value="volvo">PHP</option>
-                                <option value="saab">Java</option>
-                                <option value="fiat">ASP.NET</option>
-                                <option value="audi">javascript</option>
-                                </select>
-                              
-                            </div>
-                          </div>
-
-                          <!-- <div class="col-md-6 pl-1">
-                            <div class="form-group" style="padding-top: 10px;">
-                              <label>Đơn giá:</label>
                               <input
-                                class="form-control text-box single-line"
-                              />
-                            </div>
-                          </div> -->
-                          
-                          <div class="col-md-6 pl-1">
-                            <div class="form-group" style="padding-top: 10px;">
-                              <label>Ảnh bìa:</label>
-                              <input class="form-control" type="file" name="image" value="" id="formFileMultiple" multiple>
-                            </div>
-
-                            <div class="form-group" style="padding-top: 10px;">
-                              <label>Tải video:</label>
-                              <input class="form-control" type="file" name="video" value="" id="formFileMultiple" multiple>
-                            </div>
-                          </div>
-
-                          <div class="mb-3">
-                            <div class="form-group" style="padding-top: 10px;">
-                              <label>Mô tả khóa học:</label>
-                              <textarea class="form-control" id="exampleFormControlTextarea1" name="description" value= "" rows="3"></textarea>
-                            </div>
-                          </div>
-                          <div class="col-md-6 pl-1">
-                            <div class="form-group" >
-                              <label>Trạng thái:</label>
-                              <input
-                                class="form-control text-box single-line" name="status" value=""
+                                class="form-control text-box single-line" name="name" value=""
                               />
                             </div>
                           </div>
-                          <!-- <div class="col-md-6 pl-1">
-                            <div class="form-group">
-                              <label>Ngày cập nhật:</label>
-                              <input
-                                class="form-control"
-                                type="date"
-                                name="Ngaycapnhat"
-                              />
-                            </div>
-                          </div> -->
-                        
-                          
+
                           <div class="col-md-4 pl-1">
                             <div class="form-group" style="padding-top: 20px;">
-                              <button type="submit" class="btn btn-primary btn-sm" href="/quanlykhoahoc">Thêm mới</button>
-                              <button type="submit" class="btn btn-secondary btn-sm"><a style="text-decoration: none; color:white;" href="/quanlykhoahoc">Hủy</a></button>
+                              <button type="submit" class="btn btn-primary btn-sm">Lưu</button>
+                              <button type="submit" class="btn btn-secondary btn-sm"><a style="text-decoration: none; color:white;" href="/quanlychude">Hủy</a></button>
                               
                             </div>
                           </div>
-                        </form>
-                            </div>
+                          </form>
+                        </div>
                       </form>
                     </div>
                   </div>

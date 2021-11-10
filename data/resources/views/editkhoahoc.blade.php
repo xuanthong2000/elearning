@@ -141,8 +141,8 @@
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="/quanlythunhap"
-                    >Quản lý thu nhâp</a
+                  <a class="nav-link" href="/quanlychude"
+                    >Quản lý chủ đề</a
                   >
                 </nav>
               </div>
@@ -236,7 +236,7 @@
                                />
                             </div>
                           </div>
-                          <div class="col-md-9 pl-1">
+                          <div class="col-md-6 pl-1">
                             <div class="form-group" >
                               <label>Tên khóa học</label>
                               <input
@@ -258,6 +258,10 @@
                             <div class="form-group" style="padding-top: 10px;">
                               <label>Ảnh bìa:</label>
                               <input class="form-control" type="file" id="formFileMultiple" multiple name="image" value="{{ $course->image }}">
+                              <div class="form-group" style="padding-top: 10px;">
+                              <label>Tải video:</label>
+                              <input class="form-control" type="file" name="video" value="" id="formFileMultiple" multiple>
+                            </div>
                             </div>
                           </div>
 
@@ -289,7 +293,7 @@
                           
                           <div class="col-md-4 pl-1">
                             <div class="form-group" style="padding-top: 20px;">
-                              <button type="submit" class="btn btn-primary btn-sm">Thêm mới</button>
+                              <button type="submit" class="btn btn-primary btn-sm">Lưu</button>
                               <button type="submit" class="btn btn-secondary btn-sm"><a style="text-decoration: none; color:white;" href="/quanlykhoahoc">Hủy</a></button>
                               
                             </div>

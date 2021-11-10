@@ -46,9 +46,7 @@
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
           <a href="resetpass">Forgot your password?</a>
-          <button>
-            <a class="" href="home">Login</a>
-          </button>
+          <button type="button" class=""><a style="text-decoration: none; color:white;" href="home">Sign in</a></button>
         </form>
       </div>
       <div class="overlay-container">

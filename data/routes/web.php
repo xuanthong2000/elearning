@@ -31,6 +31,9 @@ Route::get('/resetpass', function () {
 Route::get('/editkhoahoc', function () {
     return view('editkhoahoc');
 });
+Route::get('/editchude', function () {
+    return view('editchude');
+});
 Route::get('/home', function () {
       return view('home');
 });
@@ -40,12 +43,15 @@ Route::get('/quanlykhachhang', 'UsersController@index');
 Route::get('/quanlykhoahoc', 'CoursesController@index');
 
 
-Route::get('/quanlythunhap', function () {
-    return view('quanlythunhap');
+Route::get('/quanlychude', function () {
+    return view('quanlychude');
 });
 
 Route::get('/themkhoahoc', function () {
     return view('themkhoahoc');
+});
+Route::get('/themchude', function () {
+    return view('themchude');
 });
 Route::get('/themkhoahoc/create', 'CoursesController@create');
 Route::post('/themkhoahoc/store', 'CoursesController@store');

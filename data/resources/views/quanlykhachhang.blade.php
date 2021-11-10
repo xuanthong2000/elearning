@@ -130,8 +130,8 @@
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="quanlythunhap"
-                    >Quản lý thu nhâp</a
+                  <a class="nav-link" href="quanlychude"
+                    >Quản lý chủ đề</a
                   >
                 </nav>
               </div>
