@@ -235,6 +235,13 @@
                               
                             </div>
                           </div>
+                          <div class="col-md-6 pl-1">
+                            <div class="form-group" >
+                              <label>Tên thể loại</label>
+                              <input
+                                class="form-control text-box single-line" name="category_id" value=""
+                              />
+                          </div>
 
                           <!-- <div class="col-md-6 pl-1">
                             <div class="form-group" style="padding-top: 10px;">

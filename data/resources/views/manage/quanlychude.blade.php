@@ -143,13 +143,13 @@
                 aria-expanded="false"
                 aria-controls="collapsePages"
               >
-                <div class="sb-nav-link-icon">
+                <!-- <div class="sb-nav-link-icon">
                   <i class="fas fa-book-open"></i>
                 </div>
                 Pages
                 <div class="sb-sidenav-collapse-arrow">
                   <i class="fas fa-angle-down"></i>
-                </div>
+                </div> -->
               </a>
               <div
                 class="collapse"
@@ -221,7 +221,7 @@
                     <th>STT</th>
                     <th>Tên khóa học</th>
                     <th>Mô tả</th>
-                    <th>tool</th>
+                    <th>Công cụ</th>
                   </thead>
                   <tbody>
                   @if(isset($category))
@@ -230,11 +230,11 @@
                       <td>{{$row->id}}</td>
                       <td>{{$row->name}}</td>
                       <td>{{$row->description}}</td>
-                      <td><a href="/insertandedit/editchude/{{$row->id}}">Edit</a> | 
+                      <td><a href="/insertandedit/editchude/{{$row->id}}">Sửa</a> | 
                         <form method="POST" action="/quanlychude/{{$row->id}}" onsubmit="return ConfirmDelete( this )">
                     @method('DELETE')
                     @csrf
-                    <button type="submit">Delete</button>
+                    <button type="submit">Xóa</button>
                 </form>
                         
                       </td>

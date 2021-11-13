@@ -141,13 +141,13 @@
                 aria-expanded="false"
                 aria-controls="collapsePages"
               >
-                <div class="sb-nav-link-icon">
+                <!-- <div class="sb-nav-link-icon">
                   <i class="fas fa-book-open"></i>
                 </div>
                 Pages
                 <div class="sb-sidenav-collapse-arrow">
                   <i class="fas fa-angle-down"></i>
-                </div>
+                </div> -->
               </a>
               <div
                 class="collapse"
