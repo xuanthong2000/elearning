@@ -39,12 +39,7 @@
             <div class="icons">
                 <div id="search-btn" class="search fas fa-search"></div>
                 <a href="#" class="shopping fas fa-shopping-cart"></a>
-               
-                <a href="login">
-                <div id="login-btn" class="user fas fa-user">
-                    
-                    </div>
-                </a>
+                <div id="login-btn" class="user fas fa-user"></div>
             </div>
         </div>
 
@@ -80,7 +75,7 @@
     <!--
     Login form new version
     -->
-    <!-- <div class="login-form">
+    <div class="login-form">
         <div id="close-btn" class="fas fa-times"></div>
 
         <form action="">
@@ -97,7 +92,7 @@
             <p>Forget password? <a href="#">Click here</a></p>
             <p>Don't have an account? <a href="#">Create one</a></p>
         </form>
-    </div> -->
+    </div>
 
 
 
@@ -105,7 +100,6 @@
     home section
     -->
     <section class="home" id="home">
-       
         <h1>Education From Home</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <a href="#"><button class="btn">Get Started</button></a>
@@ -265,7 +259,6 @@
     teacher
     -->
     <section class="teacher" id="teachers">
-       
         <h1 class="head">Our Expert <span>Teachers</span></h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <a href="#"><button class="btn">Learn More</button></a>
