@@ -55,6 +55,7 @@ Route::post('/admin/QLKH/themkhoahoc/store', 'CoursesController@store');
 Route::get('/admin/QLKH/quanlykhoahoc', 'CoursesController@index');
 Route::get('/admin/QLKH/suakhoahoc/edit/{id}', 'CoursesController@edit');
 Route::post('/admin/QLKH/suakhoahoc/update/{id}', 'CoursesController@update');
+Route::DELETE('/admin/QLKH/quanlykhoahoc/delete/{id}', 'CoursesController@destroy');
 
 
 

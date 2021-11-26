@@ -87,7 +87,7 @@ class CoursesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $course = News::find($id);
+        $course = course::find($id);
         $course->name = $request->name;
         $course->image = $request->image;
         $course->status = $request->status;
@@ -105,6 +105,10 @@ class CoursesController extends Controller
      */
     public function destroy($id)
     {
+        $course = course::findOrFail($id);
+
+        $course->delete();
+        return redirect()->action('CoursesController@index');
         
     }
 }

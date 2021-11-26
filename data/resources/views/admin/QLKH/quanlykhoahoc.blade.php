@@ -79,12 +79,18 @@
                       </td>
                       <td class="project-actions text-right">
                           
-                      <a class="btn btn-info btn-sm" href="/admin/QLKH/suakhoahoc/edit/{{$row->id}}">Edit</a>
-                          <a class="btn btn-danger btn-sm" href="#">
+                     
+                      <form method="POST" action="/admin/QLKH/quanlykhoahoc/delete/{{$row->id}}">
+                      @method('DELETE')
+                    @csrf
+
+                    <a class="btn btn-info btn-sm" href="/admin/QLKH/suakhoahoc/edit/{{$row->id}}">Edit</a>
+                          <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('bạn đồng ý xóa')" href="">
                               <i class="fas fa-trash">
                               </i>
                               Delete
-                          </a>
+                          </button>
+                      </form>
                       </td>
                   
                   
