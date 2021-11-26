@@ -41,7 +41,9 @@ Route::get('/index', function () {
 Route::get('quanlykhachhang', 'UsersController@index');
 
 
-
+Route::get('/themchude', function () {
+    return view('admin/QLCD/themchude');
+});
 
 
 
