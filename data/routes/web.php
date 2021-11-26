@@ -47,6 +47,7 @@ Route::get('/themchude', function () {
 
 
 
+
 Route::get('/themkhoahoc', function () {
     return view('admin/QLKH/themkhoahoc');
 });
@@ -64,6 +65,8 @@ Route::DELETE('/admin/QLKH/quanlykhoahoc/delete/{id}', 'CoursesController@destro
 
 //
 
-Route::get('/QLCD', function () {
-    return view('admin/QLCD/quanlychude');
-});
+
+Route::get('/admin/QLCD/quanlychude', 'CategorysController@index');
+Route::get('/admin/QLCD/themchude/create', 'CategorysController@create');
+Route::post('/admin/QLCD/themchude/store', 'CategorysController@store');
+Route::DELETE('/admin/QLCD/quanlychude/delete/{id}', 'CategorysController@destroy');

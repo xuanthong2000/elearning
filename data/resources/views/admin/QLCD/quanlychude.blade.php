@@ -20,6 +20,7 @@
         <div class="card-body p-0">
           <table class="table table-striped projects">
               <thead>
+                
                   <tr>
                       <th style="width: 1%">
                          STT
@@ -35,7 +36,42 @@
                   </tr>
               </thead>
               <tbody>
+              @if(isset($category))
+                  @foreach($category as $key=>$row)
+                  <tr>
+                      <td>
+                         {{$key+1}}
+                      </td>
+                      <td>
+                          {{$row->name}}
+                      </td>
+                      
+                      <td class="project_progress">
+                         
+                          {{$row->description}}
+                      </td>
+                      
+                      <td class="project-actions text-right">
+                          
+                     
+                      <form method="POST" action="/admin/QLCD/quanlychude/delete/{{$row->id}}">
+                      @method('DELETE')
+                    @csrf
 
+                    <a class="btn btn-info btn-sm" href="/admin/QLCD/suachude/edit/{{$row->id}}">Edit</a>
+                          <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('bạn đồng ý xóa')" href="">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </button>
+                      </form>
+                      </td>
+                  
+                  
+                  </tr>
+                  
+                  @endforeach
+                  @endif
                 </tbody>
           </table>
         </div>

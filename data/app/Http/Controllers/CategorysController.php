@@ -20,7 +20,7 @@ class CategorysController extends Controller
         $category = DB::table('category')->select('category.id','category.name','category.description',);
         $category = $category->get();
 
-        return view('/manage/quanlychude', compact('category'));
+        return view('/admin/QLCD/quanlychude', compact('category'));
     }
 
     /**
@@ -30,7 +30,7 @@ class CategorysController extends Controller
      */
     public function create()
     {
-        return view('/themchude');
+        return view('/admin/QLCD/themchude');
     }
 
     /**
@@ -97,10 +97,10 @@ class CategorysController extends Controller
      */
     public function destroy($id)
     {
-        $category = category::find($id);
+        $category = category::findOrFail($id);
 
         $category->delete();
-        return redirect()->action('CategorysController@index')->with('success','Dữ liệu xóa thành công.');
+        return redirect()->action('CategorysController@index');
     }
     // public function showform() {
     //     return view('/editkhoahoc');

@@ -1,8 +1,8 @@
 @extends('/manage/indexn')
 @section('content')
 
-<!-- <form method="post" action="admin/QLCD/themchude/store">
-@csrf -->
+<form method="post" action="admin/QLCD/themchude/store">
+@csrf
 <section class="content">
       <div class="row">
         <div class="col-md-6">
@@ -37,12 +37,12 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <a href="/admin/QLKH/quanlykhoahoc" class="btn btn-secondary">Hủy</a>
-          <button type="submit"  class="btn btn-success ">Thêm Khóa học</button>
+          <a href="/admin/QLKH/quanlychude" class="btn btn-secondary">Hủy</a>
+          <button type="submit"  class="btn btn-success ">Thêm chủ đề</button>
         </div>
       </div>
     </section>
-<!-- </form> -->
+</form>
 
 
 @endsection

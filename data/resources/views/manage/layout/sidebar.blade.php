@@ -71,7 +71,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/QLCD" class="nav-link">
+                <a href="/admin/QLCD/quanlychude" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Quản lý chủ đề</p>
                 </a>
