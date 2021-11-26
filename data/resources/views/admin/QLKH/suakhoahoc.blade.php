@@ -1,6 +1,6 @@
 @extends('/manage/indexn')
 @section('content')
-<form method="post" action="admin/QLKH/suakhoahoc/update{{ $course->id }}">
+<form method="post" action="admin/QLKH/suakhoahoc/{{ $course->id }}">
 @csrf
 <section class="content">
       <div class="row">

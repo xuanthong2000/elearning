@@ -61,4 +61,6 @@ Route::post('/admin/QLKH/suakhoahoc/update/{id}', 'CoursesController@update');
 
 //
 
-
+Route::get('/QLCD', function () {
+    return view('admin/QLCD/quanlychude');
+});
