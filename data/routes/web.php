@@ -69,4 +69,6 @@ Route::DELETE('/admin/QLKH/quanlykhoahoc/delete/{id}', 'CoursesController@destro
 Route::get('/admin/QLCD/quanlychude', 'CategorysController@index');
 Route::get('/admin/QLCD/themchude/create', 'CategorysController@create');
 Route::post('/admin/QLCD/themchude/store', 'CategorysController@store');
+Route::get('/admin/QLCD/suachude/edit/{id}', 'CategorysController@edit');
+Route::post('/admin/QLCD/suachude/update/{id}', 'CategorysController@update');
 Route::DELETE('/admin/QLCD/quanlychude/delete/{id}', 'CategorysController@destroy');
