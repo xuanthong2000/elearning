@@ -19,17 +19,19 @@ Route::get('users', [UsersController::class, 'clinet/index']);
 Route::get('/', function () {
     return view('client/index');
 });
-Route::get('/login', function () {
-    return view('client/login2');
-});
+// Route::get('/login', function () {
+//     return view('client/login2');
+// });
 
 Route::get('/resetpass', function () {
     return view('client/resetpass');
 });
 Route::get('/login/create', 'UsersController@create');
 Route::post('/login/store', 'UsersController@store');
-Route::get('/getlogin', ['as' => 'getLogin', 'users' => 'UsersController@getLogin']);
-Route::post('/getlogin', ['as' => 'postLogin', 'users' => 'UsersController@postLogin']);
+
+//Auth
+Route::get('/login2', 'UsersController@getlogin');
+Route::post('/login2', 'UsersController@postlogin');
 // Route::get('/logout', ['as' => 'getLogout', 'users' => 'UsersController@getLogout']);
 
 

@@ -17,7 +17,7 @@ class CategorysController extends Controller
      */
     public function index()
     {
-        $category = DB::table('category')->select('category.id','category.name','category.description',);
+        $category = DB::table('category')->select('category.id','category.name','category.description');
         $category = $category->get();
 
         return view('/admin/QLCD/quanlychude', compact('category'));

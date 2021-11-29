@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Auth;
+
 
 class UsersController extends Controller
 {
@@ -36,13 +38,9 @@ class UsersController extends Controller
         return back();
        
     }
-    public function getLogin()
+    function login()
     {
-        if (Auth::check()) {
-            return redirect('index');
-        } else {
-            return view('client/login2');
-        }
+        return view('/login2');
 
     }
 
@@ -50,19 +48,13 @@ class UsersController extends Controller
      * @param LoginRequest $request
      * @return RedirectResponse
      */
-    public function postLogin(LoginRequest $request)
+    public function postlogin(Request $request)
     {
-        $login = [
-            
-            'email' => $request->txtEmail,
-            'password' => $request->txtPassword,
-
-            
-        ];
-        if (Auth::attempt($login)) {
-            return redirect('index');
+        
+        if (Auth::attempt($request->except('_token'))) {
+            return view('manage/indexn');
         } else {
-            return redirect()->back()->with('status', 'Email hoặc Password không chính xác');
+            return view('client/login2');
         }
     }
 
