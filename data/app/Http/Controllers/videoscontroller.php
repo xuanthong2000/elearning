@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use App\Video;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class CategorysController extends Controller
+class videoscontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +17,10 @@ class CategorysController extends Controller
      */
     public function index()
     {
+        $video = DB::table('video')->select('video.id','video.name','video.url_image','video.url_video','video.description');
+        $video = $video->get();
 
-        $category = DB::table('category')->select('category.id','category.name','category.description');
-
-        $category = $category->get();
-
-        return view('/admin/QLCD/quanlychude', compact('category'));
+        return view('/admin/QLVD/quanlyvideo', compact('video'));
     }
 
     /**
@@ -32,7 +30,7 @@ class CategorysController extends Controller
      */
     public function create()
     {
-        return view('/admin/QLCD/themchude');
+        return view('/admin/QLVD/themvideo');
     }
 
     /**
@@ -43,12 +41,15 @@ class CategorysController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new Category;
-        $category->name = $request->name; 
-        $category->description = $request->description;
+        $video = new Video;
+        $video->name = $request->name;
+        $video->description = $request->description;
+        $video->url_video= $request->url_video;
+        $video->url_image= $request->url_image;
+        $video->course_id = 1;
        
-        $category->save();
-        return redirect()->action('CategorysController@index');
+        $video->save();
+        return redirect()->action('videosController@index');
     }
 
     /**
@@ -70,9 +71,9 @@ class CategorysController extends Controller
      */
     public function edit($id)
     {
-        $category = category::findOrFail($id);
+        $video = video::findOrFail($id);
         
-        return view('admin/QLCD/suachude', compact('category'));
+        return view('admin/QLVD/suavideo', compact('video'));
     }
 
     /**
@@ -84,11 +85,14 @@ class CategorysController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = category::find($id);
-        $category->name = $request->name; 
-        $category->description = $request->description;
-        $category->save();
-        return redirect()->action('CategorysController@index');
+        $video = video::find($id);
+        $video->name = $request->name;
+        $video->url_image = $request->url_image;
+        
+        $video->description = $request->description;
+
+        $video->save();
+        return redirect()->action('videosController@index');
     }
 
     /**
@@ -99,22 +103,9 @@ class CategorysController extends Controller
      */
     public function destroy($id)
     {
-        $category = category::findOrFail($id);
+        $video = video::findOrFail($id);
 
-        $category->delete();
-        return redirect()->action('CategorysController@index');
+        $video->delete();
+        return redirect()->action('videosController@index');
     }
-    // public function showform() {
-    //     return view('/editkhoahoc');
-    // }
-    // public function validationform(Request $request) {
-    //     echo "<pre>";
-    //         print_r($request->all());
-    //     echo "</pre>";
-
-    //     $this->validation($request,[
-    //         'title'=>'required|max:50',
-    //         'description'=>'required'
-    //     ]);
-    // }
 }

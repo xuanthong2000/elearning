@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\CategorysController;
+use App\Http\Controllers\videosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,19 +20,19 @@ Route::get('users', [UsersController::class, 'clinet/index']);
 Route::get('/', function () {
     return view('client/index');
 });
-// Route::get('/login', function () {
-//     return view('client/login2');
-// });
+Route::get('/login', function () {
+    return view('client/login2');
+});
 
 Route::get('/resetpass', function () {
     return view('client/resetpass');
 });
-Route::get('/login/create', 'UsersController@create');
-Route::post('/login/store', 'UsersController@store');
+Route::get('/client/login2/create', 'UsersController@create');
+Route::post('/client/login2/store', 'UsersController@store');
 
 //Auth
-Route::get('/login2', 'UsersController@getlogin');
-Route::post('/login2', 'UsersController@postlogin');
+Route::get('/client/login2', 'UsersController@login');
+Route::post('/client/login2', 'UsersController@postlogin');
 // Route::get('/logout', ['as' => 'getLogout', 'users' => 'UsersController@getLogout']);
 
 
@@ -52,7 +53,9 @@ Route::get('/themchude', function () {
 });
 
 
-
+Route::get('/themvideo', function () {
+    return view('admin/QLVD/themvideo');
+});
 
 Route::get('/themkhoahoc', function () {
     return view('admin/QLKH/themkhoahoc');
@@ -79,3 +82,11 @@ Route::get('/admin/QLCD/suachude/edit/{id}', 'CategorysController@edit');
 Route::post('/admin/QLCD/suachude/update/{id}', 'CategorysController@update');
 Route::DELETE('/admin/QLCD/quanlychude/delete/{id}', 'CategorysController@destroy');
 
+
+
+Route::get('/admin/QLVD/quanlyvideo', 'videosController@index');
+Route::get('/admin/QLVD/themvideo/create', 'videosController@create');
+Route::post('/admin/QLVD/themvideo/store', 'videosController@store');
+Route::get('/admin/QLVD/suavideo/edit/{id}', 'videosController@edit');
+Route::post('/admin/QLVD/suavideo/update/{id}', 'videosController@update');
+Route::DELETE('/admin/QLVD/quanlyvideo/delete/{id}', 'videosController@destroy');

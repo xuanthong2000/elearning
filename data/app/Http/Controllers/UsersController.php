@@ -21,7 +21,7 @@ class UsersController extends Controller
         return view('/manage/quanlykhachhang', compact('users'));
 	}
     function create() {
-        return view('/login2');
+        return view('client/login2');
     }
     public function store(Request $request)
     {
@@ -40,7 +40,7 @@ class UsersController extends Controller
     }
     function login()
     {
-        return view('/login2');
+        return view('client/login2');
 
     }
 
@@ -48,7 +48,7 @@ class UsersController extends Controller
      * @param LoginRequest $request
      * @return RedirectResponse
      */
-    public function postlogin(Request $request)
+    function postlogin(Request $request)
     {
         
         if (Auth::attempt($request->except('_token'))) {
@@ -62,11 +62,11 @@ class UsersController extends Controller
      * action admincp/logout
      * @return RedirectResponse
      */
-    public function getLogout()
-    {
-        Auth::logout();
-        return redirect()->route('/login');
-    }
+    // public function getLogout()
+    // {
+    //     Auth::logout();
+    //     return redirect()->route('/login');
+    // }
     
 }
 

@@ -12,7 +12,7 @@
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-      <form method="post" action="login/store">
+      <form method="post" action="client/login2/store">
         @csrf
           <h1>Create Account</h1>
           <div class="social-container">
@@ -35,8 +35,8 @@
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form method="post" action="/login2">
-        @csrf
+          <form method="post" action="clinet/login2/postlogin">
+          @csrf
           <h1>Sign in</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>

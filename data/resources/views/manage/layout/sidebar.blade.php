@@ -83,7 +83,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href="/admin/QLVD/quanlyvideo" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Quản lý Video</p>
                 </a>
