@@ -70,7 +70,7 @@ class CategorysController extends Controller
     {
         $category = category::findOrFail($id);
         
-        return view('insertandedit/editchude', compact('category'));
+        return view('admin/QLCD/suachude', compact('category'));
     }
 
     /**

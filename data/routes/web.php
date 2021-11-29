@@ -28,6 +28,10 @@ Route::get('/resetpass', function () {
 });
 Route::get('/login/create', 'UsersController@create');
 Route::post('/login/store', 'UsersController@store');
+Route::get('/getlogin', ['as' => 'getLogin', 'users' => 'UsersController@getLogin']);
+Route::post('/getlogin', ['as' => 'postLogin', 'users' => 'UsersController@postLogin']);
+// Route::get('/logout', ['as' => 'getLogout', 'users' => 'UsersController@getLogout']);
+
 
 Route::get('/index', function () {
     return view('admin/test');
@@ -69,4 +73,7 @@ Route::DELETE('/admin/QLKH/quanlykhoahoc/delete/{id}', 'CoursesController@destro
 Route::get('/admin/QLCD/quanlychude', 'CategorysController@index');
 Route::get('/admin/QLCD/themchude/create', 'CategorysController@create');
 Route::post('/admin/QLCD/themchude/store', 'CategorysController@store');
+Route::get('/admin/QLCD/suachude/edit/{id}', 'CategorysController@edit');
+Route::post('/admin/QLCD/suachude/update/{id}', 'CategorysController@update');
 Route::DELETE('/admin/QLCD/quanlychude/delete/{id}', 'CategorysController@destroy');
+

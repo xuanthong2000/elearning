@@ -36,6 +36,45 @@ class UsersController extends Controller
         return back();
        
     }
+    public function getLogin()
+    {
+        if (Auth::check()) {
+            return redirect('index');
+        } else {
+            return view('client/login2');
+        }
+
+    }
+
+    /**
+     * @param LoginRequest $request
+     * @return RedirectResponse
+     */
+    public function postLogin(LoginRequest $request)
+    {
+        $login = [
+            
+            'email' => $request->txtEmail,
+            'password' => $request->txtPassword,
+
+            
+        ];
+        if (Auth::attempt($login)) {
+            return redirect('index');
+        } else {
+            return redirect()->back()->with('status', 'Email hoặc Password không chính xác');
+        }
+    }
+
+    /**
+     * action admincp/logout
+     * @return RedirectResponse
+     */
+    public function getLogout()
+    {
+        Auth::logout();
+        return redirect()->route('/login');
+    }
     
 }
 
