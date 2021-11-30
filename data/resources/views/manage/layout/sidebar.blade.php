@@ -65,7 +65,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="admin/QLKH/quanlykhoahoc" class="nav-link">
+                <a href="/admin/QLKH/quanlykhoahoc" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Quản lý khóa học</p>
                 </a>
@@ -77,7 +77,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href="/admin/QLUS/quanlykhachhang" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Quản lý khách hàng</p>
                 </a>

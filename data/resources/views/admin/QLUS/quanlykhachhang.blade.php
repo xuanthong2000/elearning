@@ -10,7 +10,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">khóa học</li>
+              <li class="breadcrumb-item active">Khách Hàng</li>
             </ol>
           </div>
         </div>
@@ -23,7 +23,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-        <a class="btn btn-info btn-sm" href="/admin/QLKH/themkhoahoc/create">Thêm Khóa học</a>
+        
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -42,24 +42,21 @@
                         STT
                       </th>
                       <th style="width: 20%">
-                        Tên khóa học
+                        Tên Khách Hàng
                       </th>
                       <th style="width: 30%">
-                        Ảnh
+                       Email
                       </th>
                       <th>
-                        Mô tả
+                       SDT
                       </th>
-                      <th style="width: 8%" class="text-center">
-                        Trạng Thái
-                      </th>
-                      <th style="width: 20%">
-                      </th>
+                      
+                      
                   </tr>
               </thead>
               <tbody>
-                @if(isset($course))
-                  @foreach($course as $key=>$row)
+                @if(isset($users))
+                  @foreach($users as $key=>$row)
                   <tr>
                       <td>
                          {{$key+1}}
@@ -68,30 +65,14 @@
                           {{$row->name}}
                       </td>
                       <td>
-                         {{$row->image}}
+                         {{$row->email}}
                       </td>
-                      <td class="text-center">
+                      <td class="project_progress">
                          
-                          {{$row->description}}
+                          {{$row->phone}}
                       </td>
-                      <td class="project-state">
-                      {{$row->status}}
-                      </td>
-                      <td class="project-actions text-right">
-                          
+                      
                      
-                      <form method="POST" action="/admin/QLKH/quanlykhoahoc/delete/{{$row->id}}">
-                      @method('DELETE')
-                    @csrf
-
-                    <a class="btn btn-info btn-sm" href="/admin/QLKH/suakhoahoc/edit/{{$row->id}}">Edit</a>
-                          <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('bạn đồng ý xóa')" href="">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </button>
-                      </form>
-                      </td>
                   
                   
                   </tr>

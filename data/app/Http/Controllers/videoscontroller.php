@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-
+use App\Course;
 class videoscontroller extends Controller
 {
     /**
@@ -30,7 +30,8 @@ class videoscontroller extends Controller
      */
     public function create()
     {
-        return view('/admin/QLVD/themvideo');
+        $course = Course::all();
+        return view('admin/QLVD/themvideo',compact('course'));
     }
 
     /**
@@ -46,7 +47,7 @@ class videoscontroller extends Controller
         $video->description = $request->description;
         $video->url_video= $request->url_video;
         $video->url_image= $request->url_image;
-        $video->course_id = 1;
+        $video->course_id = $request->course;
        
         $video->save();
         return redirect()->action('videosController@index');

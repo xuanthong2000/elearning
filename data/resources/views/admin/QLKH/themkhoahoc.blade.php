@@ -1,6 +1,6 @@
 @extends('/manage/indexn')
 @section('content')
-<form method="post" action="admin/QLKH/themkhoahoc/store">
+<form method="post" action="/admin/QLKH/themkhoahoc/store">
 @csrf
 <section class="content">
       <div class="row">
@@ -19,6 +19,14 @@
               <div class="form-group">
                 <label for="inputName">Tên khóa học</label>
                 <input type="text" id="inputName" class="form-control" name="name" value="">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Tên Chủ Đề</label>
+                <select name="category"  class="form-control">
+                @foreach($category as $item)
+                <option value="{{$item->id}}"> {{$item->name}} </option>
+                @endforeach
+                </select>
               </div>
               <div class="form-group">
                 <label for="inputDescription">Mô tả</label>

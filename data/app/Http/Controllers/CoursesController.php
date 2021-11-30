@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Category;
 
 
 class CoursesController extends Controller
@@ -30,9 +31,18 @@ class CoursesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
+
     public function create()
     {
-        return view('admin/QLKH/themkhoahoc');
+        $category = Category::all();
+        // dd($category);
+
+        return view('admin/QLKH/themkhoahoc', compact('category'));
+
+
     }
 
     /**
@@ -48,7 +58,7 @@ class CoursesController extends Controller
         $course->image = $request->image;
         $course->status = $request->status;
         $course->description = $request->description;
-        $course->category_id= 1;
+        $course->category_id= $request->category;
         $course->users_id = 2;
         $course->save();
         return redirect()->action('CoursesController@index');

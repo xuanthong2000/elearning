@@ -23,7 +23,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-        <a class="btn btn-info btn-sm" href="/themvideo">Thêm Video</a>
+        <a class="btn btn-info btn-sm" href="/admin/QLVD/themvideo/create">Thêm Video</a>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -47,13 +47,13 @@
                       <!-- <th style="width: 20%">
                         Tên khóa học
                       </th> -->
-                      <th style="width: 30%">
+                      <th style="width: 20%">
                         Ảnh
                       </th>
-                      <th style="width: 30%">
+                      <th style="width: 20%">
                        video
                       </th>
-                      <th>
+                      <th style="width: 8%" class="text-center">
                         Mô tả
                       </th>
                       
@@ -62,7 +62,7 @@
                   </tr>
               </thead>
               <tbody>
-                @if(isset($video))
+              @if(isset($video))
                   @foreach($video as $key=>$row)
                   <tr>
                       <td>
@@ -71,18 +71,17 @@
                       <td>
                           {{$row->name}}
                       </td>
-                     
                       <td>
                          {{$row->url_image}}
                       </td>
                       <td>
                          {{$row->url_video}}
                       </td>
-                      <td class="project_progress">
+                      <td class="text-center">
                          
                           {{$row->description}}
                       </td>
-                     
+                      
                       <td class="project-actions text-right">
                           
                      

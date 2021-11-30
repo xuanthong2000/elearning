@@ -35,7 +35,7 @@
         </form>
       </div>
       <div class="form-container sign-in-container">
-          <form method="post" action="clinet/login2/postlogin">
+          <form method="post" action="client/login2">
           @csrf
           <h1>Sign in</h1>
           <div class="social-container">
@@ -44,9 +44,9 @@
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </div>
           <span>or use your account</span>
-          <input type="email" name="Email" placeholder="Email" />
+          <input type="email" name="email" placeholder="Email" />
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-          <input type="password" name="Password" placeholder="Password" />
+          <input type="password" name="password" placeholder="Password" />
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           <a href="resetpass">Forgot your password?</a>
           <button type="submit" class=""><a style="text-decoration: none; color:white;">Sign in</a></button>

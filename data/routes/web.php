@@ -5,6 +5,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\CategorysController;
 use App\Http\Controllers\videosController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,14 +32,13 @@ Route::get('/client/login2/create', 'UsersController@create');
 Route::post('/client/login2/store', 'UsersController@store');
 
 //Auth
-Route::get('/client/login2', 'UsersController@login');
-Route::post('/client/login2', 'UsersController@postlogin');
+
 // Route::get('/logout', ['as' => 'getLogout', 'users' => 'UsersController@getLogout']);
 
 
 Route::get('/index', function () {
     return view('admin/test');
-});
+})->middleware('checkAdminLogin');
 // Route::get('/editkhoahoc', function () {
 //     return view('editkhoahoc');
 // });
@@ -67,7 +67,8 @@ Route::get('/admin/QLKH/suakhoahoc/edit/{id}', 'CoursesController@edit');
 Route::post('/admin/QLKH/suakhoahoc/update/{id}', 'CoursesController@update');
 Route::DELETE('/admin/QLKH/quanlykhoahoc/delete/{id}', 'CoursesController@destroy');
 
-
+Route::get('/client/login2', 'UsersController@login');
+Route::post('/client/login2', 'UsersController@postlogin');
 
 
 
@@ -90,3 +91,8 @@ Route::post('/admin/QLVD/themvideo/store', 'videosController@store');
 Route::get('/admin/QLVD/suavideo/edit/{id}', 'videosController@edit');
 Route::post('/admin/QLVD/suavideo/update/{id}', 'videosController@update');
 Route::DELETE('/admin/QLVD/quanlyvideo/delete/{id}', 'videosController@destroy');
+
+
+
+
+Route::get('/admin/QLUS/quanlykhachhang', 'UsersController@index');

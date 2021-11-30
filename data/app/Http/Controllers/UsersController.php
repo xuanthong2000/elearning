@@ -18,7 +18,7 @@ class UsersController extends Controller
 		$users = DB::table('users')->select('users.id','users.name','users.email','users.phone');
         $users = $users->get();
 
-        return view('/manage/quanlykhachhang', compact('users'));
+        return view('/admin/QLUS/quanlykhachhang', compact('users'));
 	}
     function create() {
         return view('client/login2');
@@ -38,35 +38,35 @@ class UsersController extends Controller
         return back();
        
     }
-    // function login()
-    // {
-    //     return view('client/login2');
+   public function login()
+    {
+        return view('client/login2');
 
-    // }
+    }
 
     /**
      * @param LoginRequest $request
      * @return RedirectResponse
      */
-    // function postlogin(Request $request)
-    // {
+    public function postlogin(Request $request)
+    {
         
-    //     if (Auth::attempt($request->except('_token'))) {
-    //         return view('manage/indexn');
-    //     } else {
-    //         return view('client/login2');
-    //     }
-    // }
+        if (Auth::attempt($request->except('_token'))) {
+            return redirect('index');
+        } else {
+            return redirect('login');
+        }
+    }
 
     /**
      * action admincp/logout
      * @return RedirectResponse
      */
-    // public function getLogout()
-    // {
-    //     Auth::logout();
-    //     return redirect()->route('/login');
-    // }
+    public function getLogout()
+    {
+        Auth::logout();
+        return redirect()->route('/login');
+    }
     
 }
 
