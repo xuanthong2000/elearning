@@ -38,25 +38,25 @@ class UsersController extends Controller
         return back();
        
     }
-    function login()
-    {
-        return view('client/login2');
+    // function login()
+    // {
+    //     return view('client/login2');
 
-    }
+    // }
 
     /**
      * @param LoginRequest $request
      * @return RedirectResponse
      */
-    function postlogin(Request $request)
-    {
+    // function postlogin(Request $request)
+    // {
         
-        if (Auth::attempt($request->except('_token'))) {
-            return view('manage/indexn');
-        } else {
-            return view('client/login2');
-        }
-    }
+    //     if (Auth::attempt($request->except('_token'))) {
+    //         return view('manage/indexn');
+    //     } else {
+    //         return view('client/login2');
+    //     }
+    // }
 
     /**
      * action admincp/logout
