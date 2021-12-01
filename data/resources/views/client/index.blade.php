@@ -39,7 +39,7 @@
             <div class="icons">
                 <div id="search-btn" class="search fas fa-search"></div>
                 <a href="#" class="shopping fas fa-shopping-cart"></a>
-                <a href="login"><i class="user fas fa-user"></i></a>
+                <div id="login-btn" class="user fas fa-user"></div>
             </div>
         </div>
 
