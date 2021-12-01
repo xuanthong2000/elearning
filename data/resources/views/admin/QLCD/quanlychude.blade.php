@@ -42,6 +42,7 @@
                       <td>
                          {{$key+1}}
                       </td>
+                      
                       <td>
                           {{$row->name}}
                       </td>

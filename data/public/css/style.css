@@ -136,6 +136,7 @@ Global button
     margin-left: 1.5rem;
     cursor: pointer;
     transition: 0.2s;
+    color:black;
 }
 .header .header1 .icons .search:hover,
 .header .header1 .icons .shopping:hover,

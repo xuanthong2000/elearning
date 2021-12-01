@@ -64,19 +64,23 @@
                       <td>
                          {{$key+1}}
                       </td>
+
                       <td>
                           {{$row->name}}
                       </td>
+
                       <td>
-                         {{$row->image}}
+                          <img src="{{ asset('public/Images'.$row->image) }}" width="70px" height="70px" alt="Image">
                       </td>
-                      <td class="text-center">
-                         
+
+                      <td class="text-left">
                           {{$row->description}}
                       </td>
+
                       <td class="project-state">
                       {{$row->status}}
                       </td>
+
                       <td class="project-actions text-right">
                           
                      
