@@ -70,7 +70,7 @@
                       <td>
                          {{$row->image}}
                       </td>
-                      <td class="text-center">
+                      <td >
                          
                           {{$row->description}}
                       </td>
@@ -84,11 +84,11 @@
                       @method('DELETE')
                     @csrf
 
-                    <a class="btn btn-info btn-sm" href="/admin/QLKH/suakhoahoc/edit/{{$row->id}}">Edit</a>
-                          <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('bạn đồng ý xóa')" href="">
+                    <a class="btn btn-info btn-sm" href="/admin/QLKH/suakhoahoc/edit/{{$row->id}}">Sửa</a>
+                          <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn xóa khóa học này không?')" href="">
                               <i class="fas fa-trash">
                               </i>
-                              Delete
+                              Xóa
                           </button>
                       </form>
                       </td>

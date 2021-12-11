@@ -58,11 +58,11 @@
                       @method('DELETE')
                     @csrf
 
-                    <a class="btn btn-info btn-sm" href="/admin/QLCD/suachude/edit/{{$row->id}}">Edit</a>
+                    <a class="btn btn-info btn-sm" href="/admin/QLCD/suachude/edit/{{$row->id}}">Sửa</a>
                           <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('bạn đồng ý xóa')" href="">
                               <i class="fas fa-trash">
                               </i>
-                              Delete
+                              Xóa
                           </button>
                       </form>
                       </td>
