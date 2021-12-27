@@ -19,7 +19,16 @@ use App\Http\Controllers\videosController;
 Route::get('users', [UsersController::class, 'clinet/index']);
 
 Route::get('/', function () {
-    return view('client/index');
+    return view('client/home');
+});
+Route::get('/course-3', function () {
+    return view('client/course-3');
+});
+Route::get('/about', function () {
+    return view('client/about');
+});
+Route::get('/contact', function () {
+    return view('client/about');
 });
 Route::get('/login', function () {
     return view('client/login2');
