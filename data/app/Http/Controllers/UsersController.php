@@ -50,9 +50,9 @@ class UsersController extends Controller
      */
     public function postlogin(Request $request)
     {
-        $rule = auth()->user()->is_admin;
+        
         if (Auth::attempt($request->except('_token'))) {
-            if ($rule === 1) {
+            if (Auth::check() && auth()->user()->is_admin === 1) {
                 return redirect('/');
             } else {
                 return redirect('/index');
