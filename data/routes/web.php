@@ -46,7 +46,15 @@ Route::post('/client/login2/store', 'UsersController@store');
 
 
 Route::get('/index', function () {
-    return view('admin/test');
+    
+    if (auth()->user()->is_admin === 1 || auth::check() == false) {
+        return view('client/home');
+    } else {
+        return view('admin/test');  
+    };
+
+
+     
 })->middleware('checkAdminLogin');
 // Route::get('/editkhoahoc', function () {
 //     return view('editkhoahoc');

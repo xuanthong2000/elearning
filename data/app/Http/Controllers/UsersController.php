@@ -33,7 +33,6 @@ class UsersController extends Controller
         $users->address ='';
         $users->gender = 1;
         $users->is_admin = 1;
-
         $users->save();
         return back();
        
