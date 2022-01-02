@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Auth;
+
 
 class UsersController extends Controller
 {
@@ -16,10 +18,10 @@ class UsersController extends Controller
 		$users = DB::table('users')->select('users.id','users.name','users.email','users.phone');
         $users = $users->get();
 
-        return view('/quanlykhachhang', compact('users'));
+        return view('/admin/QLUS/quanlykhachhang', compact('users'));
 	}
     function create() {
-        return view('/login2');
+        return view('client/login2');
     }
     public function store(Request $request)
     {
@@ -31,10 +33,43 @@ class UsersController extends Controller
         $users->address ='';
         $users->gender = 1;
         $users->is_admin = 1;
-
         $users->save();
         return back();
        
+    }
+   public function login()
+    {
+        return view('client/login2');
+
+    }
+
+    /**
+     * @param LoginRequest $request
+     * @return RedirectResponse
+     */
+    public function postlogin(Request $request)
+    {
+        
+        if (Auth::attempt($request->except('_token'))) {
+            if (Auth::check() && auth()->user()->is_admin === 1) {
+                return redirect('/');
+            } else {
+                return redirect('/index');
+            }
+            
+        } else {
+            return redirect('login');
+        }
+    }
+
+    /**
+     * action admincp/logout
+     * @return RedirectResponse
+     */
+    public function getLogout()
+    {
+        Auth::logout();
+        return redirect()->route('/login');
     }
     
 }

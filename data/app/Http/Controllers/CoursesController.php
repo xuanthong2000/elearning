@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Course;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Category;
 
 
 class CoursesController extends Controller
@@ -21,7 +23,7 @@ class CoursesController extends Controller
         $course = DB::table('course')->select('course.id','course.name','course.image','course.description','course.status');
         $course = $course->get();
 
-        return view('/quanlykhoahoc', compact('course'));
+        return view('/admin/QLKH/quanlykhoahoc', compact('course'));
     }
 
     /**
@@ -29,9 +31,18 @@ class CoursesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
+
     public function create()
     {
-        return view('/themkhoahoc');
+        $category = Category::all();
+        // dd($category);
+
+        return view('admin/QLKH/themkhoahoc', compact('category'));
+
+
     }
 
     /**
@@ -47,10 +58,10 @@ class CoursesController extends Controller
         $course->image = $request->image;
         $course->status = $request->status;
         $course->description = $request->description;
-        $course->category_id= 1;
+        $course->category_id= $request->category;
         $course->users_id = 2;
         $course->save();
-        return back();
+        return redirect()->action('CoursesController@index');
     }
 
     /**
@@ -74,7 +85,7 @@ class CoursesController extends Controller
     {
         $course = course::findOrFail($id);
         
-        return view('/editkhoahoc', compact('course'));
+        return view('admin/QLKH/suakhoahoc', compact('course'));
     }
 
     /**
@@ -87,24 +98,13 @@ class CoursesController extends Controller
     public function update(Request $request, $id)
     {
         $course = course::find($id);
-        $course->name = $request->name; 
-        
-        if(
-            $request->image == null
-
-        ){
-            $course->image = " ";
-        }
-        else{
-            $course->image = $request->image;
-        }
+        $course->name = $request->name;
+        $course->image = $request->image;
         $course->status = $request->status;
         $course->description = $request->description;
-        // $course->category_id= 1;
-        // $course->users_id = 2;
 
         $course->save();
-        return back();
+        return redirect()->action('CoursesController@index');
     }
 
     /**
@@ -115,22 +115,10 @@ class CoursesController extends Controller
      */
     public function destroy($id)
     {
-        $course = course::find($id);
+        $course = course::findOrFail($id);
 
         $course->delete();
-        return redirect()->action('CoursesController@index')->with('success','Dữ liệu xóa thành công.');
-    }
-    public function showform() {
-        return view('/editkhoahoc');
-    }
-    public function validationform(Request $request) {
-        echo "<pre>";
-            print_r($request->all());
-        echo "</pre>";
-
-        $this->validation($request,[
-            'title'=>'required|max:50',
-            'description'=>'required'
-        ]);
+        return redirect()->action('CoursesController@index');
+        
     }
 }
